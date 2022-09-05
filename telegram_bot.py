@@ -3,9 +3,11 @@
 
 # *****************************
 # pip install pyTelegramBotAPI
+# *****************************
+
 import sys
 import os
-# import time
+
 
 import telebot
 from telebot import types
@@ -17,8 +19,8 @@ def welcome(message):
 	markup_buttons_on_start = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	button_get_code = types.KeyboardButton("Получить код")
 	button_contacts = types.KeyboardButton("Получить картинку")
-	# button_useful_overview = types.KeyboardButton("Полезный обзор")
-	# button_back = types.KeyboardButton("<- Назад")
+	
+	
 	markup_buttons_on_start.add(button_get_code, button_contacts)
 	bot.send_message(message.chat.id, 
 			"Добро пожаловать, {0.first_name}!\nЯ - {1.first_name}, бот созданный для игры.".format(message.from_user, bot.get_me()),
